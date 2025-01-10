@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ambedkar Foundation - Digital Solutions for Business Success">
+    <title>Ambedkar Foundation | Digital Solutions</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary-color: #9ae975;
+            --text-color: #333;
+            --background-color: #fff;
+            --spacing-unit: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .page1 {
+            min-height: 100vh;
+            width: 100%;
+            padding: var(--spacing-unit) * 4;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-unit) * 5) 0;
+            flex-wrap: wrap;
+            gap: var(--spacing-unit) * 2;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-unit);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-logo i {
+            transform: rotate(45deg);
+            font-size: 1.6rem;
+        }
+
+        .part2 {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 4);
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+            border: 2px solid var(--text-color);
+            border-radius: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background: var(--text-color);
+            color: var(--background-color);
+        }
+
+        .btn-primary {
+            background: var(--text-color);
+            color: var(--background-color);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .center {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 4);
+            padding: calc(var(--spacing-unit) * 8) 0;
+            flex-wrap: wrap;
+        }
+
+        .center-part1 {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .center-part1 h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+
+        .center-part1 p {
+            font-size: 1.1rem;
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            max-width: 600px;
+        }
+
+        .center-part2 {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .center-part2 img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+        }
+
+        /* Brand Carousel */
+        .brand-carousel {
+            padding: calc(var(--spacing-unit) * 4);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 4);
+        }
+
+        .brand-carousel img {
+            height: 60px;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .brand-carousel img:hover {
+            opacity: 1;
+        }
+
+        /* Services Section */
+        .page2 {
+            padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 4);
+        }
+
+        .services {
+            margin-bottom: calc(var(--spacing-unit) * 8);
+        }
+
+        .services h2 {
+            background: var(--primary-color);
+            padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 2);
+            display: inline-block;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .services p {
+            max-width: 600px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 4);
+            padding: calc(var(--spacing-unit) * 4);
+        }
+
+        .elem {
+            border: 2px solid var(--text-color);
+            border-radius: 20px;
+            padding: calc(var(--spacing-unit) * 3);
+            box-shadow: 0 15px 0 var(--text-color);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--spacing-unit) * 2);
+            transition: transform 0.3s ease;
+        }
+
+        .elem:hover {
+            transform: translateY(-5px);
+        }
+
+        .elem-part1 h1 {
+            font-size: 1.5rem;
+            background: var(--primary-color);
+            padding: var(--spacing-unit);
+            margin-bottom: auto;
+        }
+
+        .elem-part2 img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            :root {
+                --spacing-unit: 6px;
+            }
+
+            .part2 {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .center {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .center-part1 {
+                order: 2;
+            }
+
+            .center-part2 {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Rest of your HTML remains the same, but with added semantic elements -->
+    <header class="page1">
+        <nav>
+            <div class="nav-logo">
+                <i class="ri-gemini-fill"></i>
+                <span>Ambedkar Foundation</span>
+            </div>
+            <div class="part2">
+                <h4 class="nav-link">About Us</h4>
+                <h4 class="nav-link">Services</h4>
+                <h4 class="nav-link">Use Cases</h4>
+                <h4 class="nav-link">Pricing</h4>
+                <h4 class="nav-link">Blog</h4>
+                <button class="btn">Request a Quote</button>
+            </div>
+        </nav>
+
+        <main class="center">
+            <div class="center-part1">
+                <h1>Navigating the digital landscape for success</h1>
+                <p>Transform your business with our innovative digital solutions. We help you stay ahead in the ever-evolving digital world with cutting-edge strategies and proven results.</p>
+                <button class="btn btn-primary">Book a consultation</button>
+            </div>
+            <div class="center-part2">
+                <img src="DeWatermark.ai_1735886643803.jpg" alt="Digital transformation illustration">
+            </div>
+        </main>
+    </header>
+
+    <section class="brand-carousel">
+        <!-- Your brand images here -->
+    </section>
+    
+    <section class="page2">
+        <div class="services">
+            <h2>Services</h2>
+            <p>Discover our comprehensive range of digital services designed to elevate your business to new heights.</p>
+        </div>
+        <div class="container">
+            <!-- Your service elements here -->
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        // Enhanced animation code
+        function initAnimations() {
+            const tl = gsap.timeline();
+            
+            // Navigation animation
+            tl.from("nav *", {
+                y: -20,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.1,
+                ease: "power2.out"
+            });
+
+            // Hero section animation
+            tl.from(".center-part1 > *", {
+                x: -50,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.2,
+                ease: "power2.out"
+            }, "-=0.3");
+
+            tl.from(".center-part2 img", {
+                x: 50,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power2.out"
+            }, "-=0.5");
+
+            // Brand carousel animation
+            tl.from(".brand-carousel img", {
+                y: 30,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: "power2.out"
+            });
+
+            // Services section animation
+            gsap.from(".services, .elem", {
+                scrollTrigger: {
+                    trigger: ".page2",
+                    start: "top 70%",
+                    end: "top 20%",
+                    scrub: 1
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
+        }
+
+        // Initialize animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initAnimations);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Set base styles */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins";
+}
+#page1{
+  background: lightblue;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page2{
+  background: rgb(230, 173, 173);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+#page3{
+  background: rgb(230, 173, 228);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box{
+  height: 300px;
+  width: 300px;
+  background-color: crimson;
+}
+

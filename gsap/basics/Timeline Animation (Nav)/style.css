@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main{
+  height: 100%;
+  width: 100%;
+  background: url('https://images.pexels.com/photos/30000713/pexels-photo-30000713/free-photo-of-stunning-view-of-swiss-alps-with-foggy-landscape.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center / cover;
+}
+
+#nav{
+  /* background-color: cadetblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  color: white;
+}
+#nav h2{
+  font-size: 1.2rem;
+}
+#nav i{
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+#full{
+  height: 100%;
+  width: 45%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.623);
+  top: 0;
+  right: -45%;
+  backdrop-filter: blur(10px);
+  padding: 150px 50px;
+}
+
+#full h4{
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+#full i{
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

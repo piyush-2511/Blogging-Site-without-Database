@@ -1,0 +1,263 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  /* padding: 50px; */
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+}
+main{
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.cursor{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  /* background-color: rgb(255, 154, 95); */
+  box-shadow: 2px 2px 10px 4px inset rgb(95, 170, 255);
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+}
+
+
+/* Navigation */
+nav{
+  height: 10vh;
+  background-color: rgba(30, 30, 30, 0.416);
+  /* background: transparent; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.logo{
+  text-decoration: none;
+  color: white;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 20px;
+}
+.menu{
+  display: flex;
+  list-style: none;
+}
+.menu li a{
+  padding: 10px 10px;
+  text-decoration: none;
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 600;
+  /* background-color: red; */
+  margin: 3px;
+}
+
+.icons svg{
+  height: 20px;
+  fill: white;
+}
+
+
+
+
+/* Carousel */
+.carousel {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel ul {
+  margin: 0;
+  list-style: none;
+  height: 80%;
+  width: 80%;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  transition-delay: 200ms;
+  /* transform: translateX(100%); */
+  /* Start position (off-screen to the right) */
+  /* transition: none; */
+  /* GSAP will handle animations */
+}
+
+.slides[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0;
+  /* transform: translateX(0); */
+  /* Active slide position (on-screen) */
+}
+
+.slides img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-btn-next {
+  right: 10px;
+}
+
+.carousel-btn-prev {
+  left: 10px;
+}
+
+.carousel h1{
+  z-index: 2;
+  color: white;
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  font-family: fantasy;
+  /* word-spacing: 20px; */
+}
+
+
+
+
+
+/* text  */
+.text{
+  color: white;
+  /* background-color: red; */
+  /* padding: ; */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.text-div{
+  width: 80%;
+  font-size: 16px;
+  font-family: monospace;
+}
+.text-div p{
+  text-align: justify;
+  /* font-family: monospace; */
+}
+.text-div h2{
+  font-size: 24px;
+  /* font-family: monospace; */
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+.divider-section{
+  width: 100vw;
+  height: 10vh;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.divider{
+  height: 2px;
+  width: 80%;
+  background-color: white;
+}
+
+
+.footer{
+  /* background-color: red; */
+  height: 35vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer-container{
+  height: 100%;
+  width: 80%;
+  /* background-color: blue; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 30px;
+}
+.footer-logo{
+  /* background-color: green; */
+
+}
+.footer-logo h1{
+  /* border: 1px solid black; */
+  /* margin-top: 30px; */
+  font-family: monospace;
+}
+.footer-menu{
+  /* background-color: antiquewhite; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.footer-menu h3{
+  font-family: monospace;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.footer-menu a{
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 16px;
+  color: white;
+}
+.footer-contact-us{
+  /* background-color: cadetblue; */
+}
+.footer-contact-us h3{
+  font-family: monospace;
+  font-size: 20px;
+  text-decoration: underline;
+}
+.footer-social-icons{
+  /* background-color: lawngreen; */
+  padding: 20px;
+  
+}
+.footer-social-icons a{
+  text-decoration: none;
+  
+}
