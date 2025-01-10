@@ -3,6 +3,7 @@ let main = document.querySelector('main')
 let cursor = document.querySelector('.cursor')
 
 document.addEventListener('mousemove', (e) => {
+  console.log(9)
   gsap.to(cursor, {
     x: e.x,
     y: e.y,
@@ -122,3 +123,28 @@ const truncateTitle = (content, minWords = 3, maxWords = 8) => {
   return words.slice(0, wordCount).join(' ') + '...';
 };
 
+
+
+
+
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+mobileMenuIcon.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+  // Optional: Toggle icon between menu and close
+  const icon = mobileMenuIcon.querySelector('i');
+  icon.classList.toggle('ri-menu-3-fill');
+  icon.classList.toggle('ri-close-fill');
+});
+
+// Close menu when clicking a link
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    const icon = mobileMenuIcon.querySelector('i');
+    icon.classList.add('ri-menu-3-fill');
+    icon.classList.remove('ri-close-fill');
+  });
+});
