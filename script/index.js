@@ -159,3 +159,27 @@ gsap.from('.blogCard', {
   // stagger: 0.2, // Re-enabled stagger for better visual effect
   ease: 'power2.out'
 });
+
+
+
+const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+mobileMenuIcon.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+  // Optional: Toggle icon between menu and close
+  const icon = mobileMenuIcon.querySelector('i');
+  icon.classList.toggle('ri-menu-3-fill');
+  icon.classList.toggle('ri-close-fill');
+});
+
+// Close menu when clicking a link
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    const icon = mobileMenuIcon.querySelector('i');
+    icon.classList.add('ri-menu-3-fill');
+    icon.classList.remove('ri-close-fill');
+  });
+});
