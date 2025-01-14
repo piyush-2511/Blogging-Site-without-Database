@@ -130,7 +130,7 @@ const recentBlogs = blogs.slice(-3).reverse(); // Get last 3 blogs and reverse t
 // Create blog cards HTML
 let blogCardHTML = recentBlogs.map(blog => `
   <div class="blogCard">
-      <img src="${blog.featuredImage}" alt="Blog featured image">
+      <img src="./assets/featuredImage/${blog.featuredImage}" alt="Blog featured image">
       <div class = "blogText">
         <div class="categories">${blog.categories}</div>
         <div class="blogTitle">${truncateTitle(blog.title)}</div>

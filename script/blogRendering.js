@@ -19,8 +19,8 @@ const truncateTitle = (content, minWords = 3, maxWords = 8) => {
 let blogCardHTML = '';
 blogs.forEach((blog) => {
   blogCardHTML += `
-    <div class="blogCard">
-      <img src="${blog.featuredImage}" alt="Blog featured image">
+    <div class="blogCard" data-blog-id=${blog.blogId}>
+      <img src="./assets/featuredImage/${blog.featuredImage}" alt="Blog featured image">
       <div class = "blogText">
         <div class="categories">${blog.categories}</div>
         <div class="blogTitle">${truncateTitle(blog.title)}</div>
@@ -29,6 +29,8 @@ blogs.forEach((blog) => {
       </div>
     </div>
   `;
+
+
 });
 
 // Insert the blog cards into the DOM
@@ -36,9 +38,15 @@ document.querySelector('.blogs').innerHTML = blogCardHTML;
 
 // Add click event listeners to all blog cards
 document.querySelectorAll('.blogCard').forEach((card, index) => {
-  card.addEventListener('click', () => {
-    window.location.href = `../blogHTML/${blogs[index].filename}`;
-  });
+  const blogId = card.getAttribute('data-blog-id');  // Alternative way to get dataset
+  // or use: const blogId = card.dataset.blogId;
+  console.log('Blog ID:', blogId);
+    // Added string for clarity in console
+  card.addEventListener('click', ()=>{
+    window.location.href = `../blogHTML/blog-page.html?blogId=${blogId}`;
+  })
+  
+  // Add your click handler logic here
 });
 
 // Optional: Add animation with GSAP
