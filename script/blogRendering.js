@@ -1,5 +1,5 @@
 // Import blogs from the correct relative path
-import { blogs } from '../blogs/blogs.js';
+import { blogs } from '../blogs-list/blogs.js';
 
 // Function to get first 10-15 words from content
 const truncateContent = (content, minWords = 10, maxWords = 15) => {
@@ -43,7 +43,7 @@ document.querySelectorAll('.blogCard').forEach((card, index) => {
   console.log('Blog ID:', blogId);
     // Added string for clarity in console
   card.addEventListener('click', ()=>{
-    window.location.href = `../blogHTML/blog-page.html?blogId=${blogId}`;
+    window.location.href = `../blog/blog-page.html?blogId=${blogId}`;
   })
   
   // Add your click handler logic here

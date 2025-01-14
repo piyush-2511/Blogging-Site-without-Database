@@ -1,4 +1,4 @@
-import { blogs } from '../blogs/blogs.js';
+import { blogs } from '../blogs-list/blogs.js';
 
 // Cursor 
 let main = document.querySelector('main')
@@ -107,29 +107,30 @@ applyScalingAnimation(document.querySelector('[data-active]'))
 
 
 
-
+console.log(blogs)
 // Recent Blogs 
+// Import blogs from the correct relative path
 // import { blogs } from '../blogs/blogs.js';
 
 // Function to get first 10-15 words from content
 const truncateContent = (content, minWords = 10, maxWords = 15) => {
   const words = content.split(' ');
+  // Get a random number between minWords and maxWords
   const wordCount = Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
   return words.slice(0, wordCount).join(' ') + '...';
 };
-
 const truncateTitle = (content, minWords = 3, maxWords = 8) => {
   const words = content.split(' ');
+  // Get a random number between minWords and maxWords
   const wordCount = Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
   return words.slice(0, wordCount).join(' ') + '...';
 };
 
-// Get the last 3 blogs
-const recentBlogs = blogs.slice(-3).reverse(); // Get last 3 blogs and reverse to show newest first
-
 // Create blog cards HTML
-let blogCardHTML = recentBlogs.map(blog => `
-  <div class="blogCard">
+let blogCardHTML = '';
+blogs.forEach((blog) => {
+  blogCardHTML += `
+    <div class="blogCard" data-blog-id=${blog.blogId}>
       <img src="./assets/featuredImage/${blog.featuredImage}" alt="Blog featured image">
       <div class = "blogText">
         <div class="categories">${blog.categories}</div>
@@ -138,17 +139,25 @@ let blogCardHTML = recentBlogs.map(blog => `
         <div class="blogDesc">${truncateContent(blog.content)}</div>
       </div>
     </div>
-`).join('');
+  `;
+
+
+});
 
 // Insert the blog cards into the DOM
 document.querySelector('.blog-card-container').innerHTML = blogCardHTML;
 
 // Add click event listeners to all blog cards
 document.querySelectorAll('.blogCard').forEach((card, index) => {
-  card.addEventListener('click', () => {
-    // Use recentBlogs array instead of blogs for correct indexing
-    window.location.href = `../blogHTML/${recentBlogs[index].filename}`;
-  });
+  const blogId = card.getAttribute('data-blog-id');  // Alternative way to get dataset
+  // or use: const blogId = card.dataset.blogId;
+  console.log('Blog ID:', blogId);
+    // Added string for clarity in console
+  card.addEventListener('click', ()=>{
+    window.location.href = `../blog/blog-page.html?blogId=${blogId}`;
+  })
+  
+  // Add your click handler logic here
 });
 
 // Optional: Add animation with GSAP

@@ -212,13 +212,13 @@ nav{
   align-items: center;
   justify-content: center;
 }
-/* .about-us-container .image img{
+.about-us-container .image img{
   height: 90%;
   width: 90%;
   border-radius: 10px;
   object-fit: cover;
   object-position: center;
-} */
+}
 .about-us-container .image video{
   height: 80%;
   width: 90%;
