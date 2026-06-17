@@ -95,8 +95,7 @@ if (clickedBlog) {
     
     <section class="body">
       <div class="container">
-        <img src="../assets/images/${clickedBlog.image1}" alt="">
-        <p>${clickedBlog.content}</p>
+        ${clickedBlog.content}
       </div>
     </section>
   `;
